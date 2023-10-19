@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+
+.color{
+  background-color: green;
+  color: #CFF4FC;
+  width: 100vh;
+  height: 100vh;
+}
+
+:root {
+    --primary-color: #4D85A8;
+    --primary-light: #CFF4FC;
+    --primary-dark: #084298;
+  }
+ 
+  h1{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1.92px;
+    color: #000;
+  }
+
+
+  h3{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  h4{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal; 
+  }
+
+  h5{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  p{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px; 
+  }
+
+
+  .card{
+    width: 290px;
+    height: auto;
+    padding: 10px;
+    border-radius: 12px;
+    align-items: flex-start;
+    flex-direction: column;
+    border: 1px solid var(--gray-300, #DEE2E6);
+    background: var(--default-white, #FFF);
+    transition: background 200ms, border 200ms;
+  }
+
+  .card-icon{
+    font-size: 35px; 
+    padding: 6px;
+  }
+
+
+  .container-nosotros{
+    position: relative;
+  }
+
+  .navbar{
+    position: sticky;
+    background-color: var(--primary-color);
+  }
+
+  .nav-link, active{
+    color:var(--primary-light);
+  }
+
+  .btn-primary{
+    background-color: var(--primary-dark);
+  }
+
+  .form-label{
+    color:#FFF;
+  }
+
+  .background-welcome{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/images/house0.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .background-services{
+    background-image: url('/images/background.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .background-form{
+    background-color: var(--primary-color);
+    border-radius: 12px;
+  }
+
+  .background-footer{
+    background-color: var(--primary-dark);
+  }
+  
+  .welcome-container{
+    margin: 100px 899px 196px 100px;
+    flex-direction: column;
+    justify-content: left;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+  }
+
+  .container-servicios{
+    margin: 90px;
+  }
+
+  .margin-footer{
+    margin: 66px 40px 65px 43px;
+  }
+
+
+  .custom-mt {
+    margin-top: 200px;
+  }
+
+  .hidden-on-mobile {
+    display: block; 
+  }
+
+  .text-custom{
+    word-wrap:normal;
+    justify-content: center;
+  }
+
+
+  .footer-list{
+    list-style-type: none; 
+    color:#FFF;
+    text-align: left;
+  }
+
+  .footer-menu{
+    text-align: right;
+    line-height: 34px;
+    align-items: end;
+  }
+
+  .logo-footer{
+    width:175px;
+    height:175px;
+  }
+
+  .icon {
+    color: white;
+    font-size: 24px;
+    margin-right: 20px;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
+/* Extra small devices (phones) */
+@media (max-width: 575.98px) {
+    .welcome-container {
+      margin: 20px; /* Reduce margin for smaller screens */
+      padding: 10px; /* Add padding for better spacing */
+    }
+
+    .custom-mt {
+      margin-top: 50px;
+    }
+
+    h1 {
+        font-size: 40px;
+        
+    }
+
+    h3 {
+        font-size: 30px;  
+    }
+      
+    p {
+        font-size: 16px;
+        line-height: 25px; 
+        margin-right: 20px;
+        text-align: justify;
+    }
+
+    .hidden-on-mobile {
+      display: none; 
+    }
+
+    .container-servicios{
+      margin:90px 5px 90px 5px;
+    }
+
+    .card-responsive{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-title{
+      text-align: center;
+    }
+
+    .card-icon{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+  }
+  
+  /* Small devices (tablets) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .welcome-container {
+      margin: 40px;
+      padding: 20px; 
+    }
+
+    h1{
+        font-size: 48px;
+    }
+      
+    p{
+        font-size: 16px; 
+    }
+
+    .card{
+    width: max-content;
+    }
+
+    .card-responsive{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+  
+  /* Medium devices (laptops and desktops) */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .welcome-container {
+      margin: 60px; 
+      padding: 30px; 
+    }
+
+    .card-responsive{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
+  /* Large devices (large desktops and high-res monitors) */
+  @media (min-width: 992px) {
+    .welcome-container {
+      margin: 80px; 
+      padding: 40px; 
+    }
+
+    .card-responsive{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+  }
