@@ -1,5 +1,4 @@
-import { Link as NextLink } from 'next/link'; 
-import { useState } from 'react';
+import { Link as NextLink } from 'next/link';
 
 const navLinks = [
     {
@@ -21,8 +20,6 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-    const isClient = typeof window !== 'undefined';
-
     return (
         <nav className="navbar navbar-expand-lg sticky-top">
             <div className="container-fluid">
@@ -36,17 +33,11 @@ const Navbar = () => {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         {navLinks.map((link, index) => (
                             <li key={index}>
-                                {isClient ? (
-                                    <a href={`#${link.path}`} className="nav-link">
+                                <NextLink href={`#${link.path}`}>
+                                    <a className="nav-link">
                                         {link.title}
                                     </a>
-                                ) : (
-                                    <NextLink href={`#${link.path}`}>
-                                        <a className="nav-link">
-                                            {link.title}
-                                        </a>
-                                    </NextLink>
-                                )}
+                                </NextLink>
                             </li>
                         ))}
                     </ul>
@@ -57,4 +48,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
