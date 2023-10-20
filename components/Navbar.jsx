@@ -1,5 +1,4 @@
 import { Link as NextLink } from 'next/link'; 
-import ScrollTo from 'react-scroll-to';
 import { useEffect, useState } from 'react';
 
 const navLinks = [
@@ -41,17 +40,16 @@ const Navbar = () => {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         {navLinks.map((link, index) => (
                             <li key={index}>
-                                {isClient && (
-                                    <ScrollTo 
-                                        to={link.path}
-                                        spy={true}
-                                        smooth={true}
-                                        offset={-150}
-                                        duration={100}
-                                        className="nav-link"
-                                    >
+                                {isClient ? (
+                                    <a href={`#${link.path}`} className="nav-link">
                                         {link.title}
-                                    </ScrollTo>
+                                    </a>
+                                ) : (
+                                    <NextLink href={`#${link.path}`}>
+                                        <a className="nav-link">
+                                            {link.title}
+                                        </a>
+                                    </NextLink>
                                 )}
                             </li>
                         ))}
