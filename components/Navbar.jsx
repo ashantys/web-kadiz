@@ -1,5 +1,5 @@
 import { Link as NextLink } from 'next/link'; 
-import { Link as ScrollLink } from 'react-scroll'; 
+import ScrollTo from 'react-scroll-to';
 
 const navLinks = [
     {
@@ -34,7 +34,7 @@ const Navbar = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               {navLinks.map((link, index) => (
                 <li key={index}>
-                  <ScrollLink 
+                  <ScrollTo 
                     to={link.path}
                     spy={true}
                     smooth={true}
@@ -43,7 +43,7 @@ const Navbar = () => {
                     className="nav-link"
                   >
                     {link.title}
-                  </ScrollLink>
+                  </ScrollTo>
                 </li>
               ))}
             </ul>
