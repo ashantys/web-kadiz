@@ -1,6 +1,6 @@
-import { Link as NextLink } from 'next/link';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
+import { useEffect } from 'react';
+import Link from 'react-scroll/modules/components/Link';
+import Image from 'next/image';
 
 const navLinks = [
     {
@@ -22,11 +22,15 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+    useEffect(() => {
+
+    }, []);
+
     return (
         <nav className="navbar navbar-expand-lg sticky-top">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">
-                    <img src="/logo.png" alt="Logo" width="200" height="100" className="d-inline-block align-text-top" />
+                    <Image src="/images/logo.png" alt="Logo" width="200" height="100" className="d-inline-block align-text-top"/>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -35,11 +39,16 @@ const Navbar = () => {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         {navLinks.map((link, index) => (
                             <li key={index}>
-                                <NextLink href={`#${link.path}`}>
-                                    <a className="nav-link">
-                                        {link.title}
-                                    </a>
-                                </NextLink>
+                                <Link
+                                    to={link.path}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-150}
+                                    duration={100}
+                                    className="nav-link"
+                                >
+                                    {link.title}
+                                </Link>
                             </li>
                         ))}
                     </ul>
