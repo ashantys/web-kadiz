@@ -1,5 +1,5 @@
 import { Link as NextLink } from 'next/link'; 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const navLinks = [
     {
@@ -21,11 +21,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
+    const isClient = typeof window !== 'undefined';
 
     return (
         <nav className="navbar navbar-expand-lg sticky-top">
@@ -61,3 +57,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
