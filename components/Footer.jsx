@@ -52,7 +52,7 @@ const Footer = () => {
                             <ul className="footer-list">
                                 {footerMenuItems.map((item, index) => (
                                     <li key={index}>
-                                        <Link  className="white-link" href={`#${item.sectionId}`}> {/* Use href with the sectionId */}
+                                        <Link className="white-link" href={`#${item.sectionId}`}>
                                             {item.title}
                                         </Link>
                                     </li>
