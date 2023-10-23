@@ -9,7 +9,6 @@ const Nosotros = () =>{
         <div className="container-nosotros">
             <div className="row">
                 <div className="col-sm-12 col-lg-6 col-md-10 custom-mt">
-                    {/* Left column with two text blocks */}
                     <div className="d-flex flex-column ms-5">
                         <div className="mb-5">
                             <h3>Quiénes Somos</h3>
