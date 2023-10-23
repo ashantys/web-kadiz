@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-.color{
-  background-color: green;
-  color: #CFF4FC;
-  width: 100vh;
-  height: 100vh;
-}
 
 :root {
     --primary-color: #4D85A8;
