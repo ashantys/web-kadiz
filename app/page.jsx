@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Nosotros from '@/components/Nosotros';
 import Servicios from '@/components/Servicios';
 import Contacto from '@/components/Contacto';
+import Footer from '@/components/Footer';
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <Nosotros/>
       <Servicios/>
       <Contacto/>
+      <Footer/>
     </>
   )
 }
