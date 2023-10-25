@@ -34,7 +34,7 @@ const Footer = () => {
                     <div className="col-lg-5">
                         <div className="container-info margin-footer">
                             <h5>Comunicación Directa</h5>
-                            <ul class="footer-list">
+                            <ul className="footer-list">
                                 <li >
                                     <i className="bi bi-geo-alt icon"></i>Tlalpan (Alcaldía) Ciudad de México
                                 </li>

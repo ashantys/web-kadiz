@@ -38,8 +38,6 @@ const Navbar = () => {
                             <li key={index}>
                                 <Link 
                                     to={item.path}
-                                    spy={true}
-                                    smooth={true}
                                     offset={0}
                                     duration={500}
                                     className="nav-link" 
