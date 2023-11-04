@@ -1,41 +1,41 @@
 'use client'
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contacto = () => {
-  const [formData, setFormData] = useState({
-    inputNombre: '',
-    inputEmail: '',
-    inputAsunto: '',
-    inputMensaje: '',
-  });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  const [name,setName] = useState('');
+  const [email,setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const correo = {
-      from: formData.inputEmail,
-      to: 'kadiz.contacta@gmail.com',
-      subject: formData.inputAsunto,
-      text: formData.inputMensaje,
+    const serviceId = "service_np0lsuj";
+    const templateId = "template_ahpiyko";
+    const publicKey = "m9-83wldiyd1Y_SQb";
+
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      from_subject: subject,
+      to_name: 'Kadiz',
+      message: message,
     };
 
-    try {
-      const response = await axios.post('/api/send-email/route', correo);
-      console.log('Correo enviado con éxito', response.data);
-    } catch (error) {
-      console.error('Error al enviar el correo', error);
-    }
-  };
-
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log("Correo enviado con exito", response);
+        setName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
+      })
+      .catch((error) => {
+        console.error("Error mandando el email:", error);
+      });
+  }
   return (
     <div id="contacto" className="container-contacto m-5">
       <div className="row">
@@ -48,57 +48,50 @@ const Contacto = () => {
         <div className="col-lg-5 ms-lg-5 mt-sm-5 background-form">
           <form onSubmit={handleSubmit}>
             <div className="m-4 mt-5">
-              <label htmlFor="inputNombre" className="form-label">
+              <label className="form-label">
                 Nombre
               </label>
               <input
                 type="text"
                 className="form-control"
-                id="inputNombre"
-                placeholder="Juan Pérez"
-                name="inputNombre"
-                value={formData.inputNombre}
-                onChange={handleInputChange}
+                placeholder="Ingrese su nombre"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="m-4">
-              <label htmlFor="inputEmail" className="form-label">
+              <label className="form-label">
                 Correo Electrónico
               </label>
               <input
                 type="email"
                 className="form-control"
-                id="inputEmail"
-                placeholder="ejemplo@correo.com"
-                name="inputEmail"
-                value={formData.inputEmail}
-                onChange={handleInputChange}
+                placeholder="Ingrese su correo electronico"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="m-4">
-              <label htmlFor="inputAsunto" className="form-label">
+              <label className="form-label">
                 Asunto
               </label>
               <input
                 type="text"
                 className="form-control"
-                id="inputAsunto"
-                placeholder="Cotización"
-                name="inputAsunto"
-                value={formData.inputAsunto}
-                onChange={handleInputChange}
+                placeholder="Ingrese un asunto del mensaje"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
               />
             </div>
             <div className="m-4">
-              <label htmlFor="inputMensaje" className="form-label">
+              <label className="form-label">
                 Mensaje
               </label>
               <textarea
                 className="form-control"
-                id="inputMensaje"
-                name="inputMensaje"
-                value={formData.inputMensaje}
-                onChange={handleInputChange}
+                rows={8}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
             <div className="d-grid gap-2">
