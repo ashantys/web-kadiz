@@ -290,3 +290,8 @@
     }
     
   }
+
+  .alert-toast{
+    width: 22em;
+    height: 4em;
+  }

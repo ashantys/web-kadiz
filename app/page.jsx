@@ -13,6 +13,7 @@ export default function Home() {
           <Header/>
           <Nosotros/>
           <Servicios/>
+          {/* alert */}
           <Contacto/>
           <Footer/>
 

@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import SuccessAlert from './SuccessAlert';
 
 const Contacto = () => {
 
@@ -8,6 +9,7 @@ const Contacto = () => {
   const [email,setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,13 +33,19 @@ const Contacto = () => {
         setEmail('');
         setSubject('');
         setMessage('');
+        setIsSuccess(true);
+        setTimeout(() => {
+          setIsSuccess(false);
+        }, 4000);
       })
       .catch((error) => {
         console.error("Error mandando el email:", error);
       });
   }
   return (
+    <>
     <div id="contacto" className="container-contacto m-5">
+    {isSuccess && <SuccessAlert/>}
       <div className="row">
         <div className="col-lg-6">
           <h3 className="ms-2 mt-5">Hablemos de negocios</h3>
@@ -52,6 +60,7 @@ const Contacto = () => {
                 Nombre
               </label>
               <input
+                required
                 type="text"
                 className="form-control"
                 placeholder="Ingrese su nombre"
@@ -64,6 +73,7 @@ const Contacto = () => {
                 Correo Electrónico
               </label>
               <input
+                required
                 type="email"
                 className="form-control"
                 placeholder="Ingrese su correo electronico"
@@ -76,6 +86,7 @@ const Contacto = () => {
                 Asunto
               </label>
               <input
+                required
                 type="text"
                 className="form-control"
                 placeholder="Ingrese un asunto del mensaje"
@@ -103,6 +114,7 @@ const Contacto = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
