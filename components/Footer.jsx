@@ -36,13 +36,13 @@ const Footer = () => {
                             <h5>Comunicación Directa</h5>
                             <ul className="footer-list">
                                 <li >
-                                    <i className="bi bi-geo-alt icon"></i>Tlalpan (Alcaldía) Ciudad de México
+                                    <i className="bi bi-geo-alt icon"></i>En Algún Lugar Del Mundo
                                 </li>
                                 <li>
-                                    <i className="bi bi-envelope icon"></i>alalsaar@gmail.com
+                                    <i className="bi bi-envelope icon"></i>correo@ejemplo.com
                                 </li>
                                 <li>
-                                    <i className="bi bi-telephone icon"></i>+52 (551) 265-3166
+                                    <i className="bi bi-telephone icon"></i>+00 (000) 000-0000
                                 </li>
                                 </ul>
                         </div>
